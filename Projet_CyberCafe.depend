@@ -1,0 +1,80 @@
+# depslib dependency file v1.0
+1712598123 source:c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\date.cpp
+	"Date.h"
+
+1713207773 c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\date.h
+	<string>
+	<iostream>
+
+1712596431 source:c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\client.cpp
+
+1712597837 source:c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\main.cpp
+	<iostream>
+	"Ordinateur.h"
+	"Personne.h"
+	"Facture.h"
+	"Service.h"
+	"Session.h"
+	"Tarif.h"
+	"Date.h"
+
+1713207773 c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\ordinateur.h
+	<string>
+	<iostream>
+
+1713208530 c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\personne.h
+	<string>
+	<vector>
+	<iostream>
+	"Session.h"
+
+1713207773 c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\session.h
+	<string>
+	<iostream>
+	"Client.h"
+	"Ordinateur.h"
+
+1713208041 c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\client.h
+	<string>
+	<iostream>
+	"Personne.h"
+	"Service.h"
+
+1713208530 c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\service.h
+	<string>
+	<iostream>
+	"Session.h"
+	"Tarif.h"
+
+1713208793 c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\tarif.h
+	<string>
+	<vector>
+	<iostream>
+	"Service.h"
+	"Session.h"
+
+1713207773 c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\facture.h
+	<string>
+	<iostream>
+	"Client.h"
+	"Service.h"
+	"Session.h"
+	"Date.h"
+
+1712596366 source:c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\personne.cpp
+
+1712596499 source:c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\cyber_cafe.cpp
+
+1712596342 source:c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\session.cpp
+
+1712598018 source:c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\facture.cpp
+	"Facture.h"
+
+1712596569 source:c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\ordinateur.cpp
+
+1712596583 source:c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\service.cpp
+
+1712596596 source:c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\tarif.cpp
+
+1712596629 source:c:\users\user\onedrive\documents\programmation\groupb2023-2024\1ere_informatique\projet c++\projet_cybercafe\superviseur.cpp
+

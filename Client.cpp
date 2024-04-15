@@ -1,0 +1,50 @@
+#include "Client.h"
+
+Client::Client(string n,string p,string add, Service serv, Session sess, int n): Personne(n,p,add) ,service_c(serv) ,session_c(sess), nb_occur(n)
+{
+}
+Client::~Client()
+{
+}
+/*Client::Client(const Client& c)
+{
+    service_c=c.service_c;
+    session_c=c.session_c;
+    nb_occur=c.nb_occur;
+}*/
+ostream& operator<<(ostream& out, Client& c)
+{
+    out<<"Nom : "<<c.nom<<endl;
+    out<<"Prenom : "<<c.prenom<<endl;
+    for(int i=0;i<c.session_pers.size();i++)
+        out<<c.session_pers[i];
+    return out;
+
+}
+istream& operator>>(istream& in, Client& c)
+{
+    cout<<"Saisir nom : "<<endl;
+    in>>c.nom;
+    cout<<"Saisir prenom : "<<endl;
+    in>>c.prenom;
+    cout<<"Saisir une session : "<<endl;
+    for(int i=0;i<c.session_pers.size();i++)
+        in>>c.session_pers[i];
+    return in;
+
+}
+/*Client Client::operator=(const Client& c)
+{
+    if (this!=&c)
+    {
+        service_c=c.service_c;
+        session_c=c.session_c;
+        nb_occur=c.nb_occur;
+    }
+  return *this;
+}*/
+/*bool Client::verif_membre()
+{
+    if (nb_occur>3) return true;
+    else return false ;
+}*/
