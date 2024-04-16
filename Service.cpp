@@ -2,28 +2,23 @@
 
 Service::Service()
 {
-
 }
 Service::~Service()
 {
-
 }
 friend ostream& operator<<(ostream& out , Service& s)
 {
-
+    out<<"Service: "<<s.type<<endl;
+    out<<s.client_s<<endl;
+    out<<s.tarif_s<<endl;
+    return out;
 }
-string type;
-    Client client_s;
-    Tarif tarif_s;
 friend istream& operator>>(istream& in, Service& s)
 {
-    in>>s.client_s<<endl;
-    cout<<"Saisir tarif: "<<endl;
+    cout<<"Saisir service: "<<endl;
+    in>>s.type<<endl;
+    in>>s.client_s;
     in>>s.tarif_s;
     return in;
-}
-bool Service::verifier_dispo()
-{
-
 }
 

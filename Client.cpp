@@ -1,9 +1,12 @@
 #include "Client.h"
 
-Client::Client(string n,string p,string add, Service serv, Session sess, int n): Personne(n,p,add) ,service_c(serv) ,session_c(sess), nb_occur(n)
+Client::Client(string n,string p,string add, Service serv, Session sess, int nb): Personne(n,p,add) ,service_c(serv) ,session_c(sess), nb_occur(nb)
 {
 }
 Client::~Client()
+{
+}
+Client::Client()
 {
 }
 ostream& operator<<(ostream& out, Client& c)
@@ -23,7 +26,7 @@ istream& operator>>(istream& in, Client& c)
     in>>c.prenom;
     cout<<"Saisir une session : "<<endl;
     for(int i=0;i<c.session_pers.size();i++)
-        in>>c.session_pers[i];
+        in>>*(c.session_pers[i]);
     return in;
 
 }
@@ -37,7 +40,7 @@ Client Client::operator=(const Client& c)
     }
   return *this;
 }
-void affichePersonne()
+void Client::affichePersonne()
 {
     cout<<"Nom: "<<nom<<endl;
     cout<<"Prenom: "<<prenom<<endl;

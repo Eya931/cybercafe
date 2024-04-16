@@ -2,6 +2,7 @@
 #include<string>
 #include<iostream>
 #include "Session.h"
+#include "Client.h"
 #include "Tarif.h"
 
 using namespace std;
@@ -16,5 +17,4 @@ public:
     ~Service();
     friend ostream& operator<<(ostream&, Service&);
     friend istream& operator>>(istream&, Service&);
-
 };

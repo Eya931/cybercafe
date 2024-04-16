@@ -19,28 +19,31 @@ Facture::Facture()
 }
 Facture::~Facture()
 {
+    for(int i=0;i<tab_f.size();i++)
+       delete tab_f[i];
+    tab_f.clear();
 }
+static int id_fact;
+    Date date_fact;
+    vector<Service*>tab_f;
+    float montant ;
 Facture::Facture(const Facture& f)
 {
+    id_fact=f.id_fact;
     date_fact=f.date_fact;
-    matricule=b.matricule;
-    Article*e;
-    for(int i=0;i<b.tab.size();i++)
+    Service*s;
+    for(int i=0;i<f.tab_f.size();i++)
     {
-        if(typeid(*b.tab[i])==typeid(ArticleEnSolde))
-            e=new ArticleEnSolde(static_cast<const ArticleEnSolde&>(*b.tab[i]));
-        else if(typeid(*b.tab[i])==typeid(Article))
-            e=new Article(static_cast<const Article&>(*b.tab[i]));
-        tab.push_back(e);
+        s=new Service(*f.tab_f[i]);
+        tab_f.push_back(s);
     }
 }
 ostream& operator<<(ostream& out, Facture& f)
 {
     out<<"Num Facture: "<<f.id_fact<<endl;
     out<<"Date : "<<f.date_fact<<endl;
-    out<<"Duree : "<<f.duree_f<<endl;
-    out<<"Client : "<<f.client_f<<endl;
-    out<<"Service : "<<f.service_f<<endl;
+    for(int i=0;i<f.tab_f.size();i++)
+       out<<"Service : "<<*(f.tab_f[i])<<endl;
     out<<"--------------------"<<endl;
     out<<"Montant :     "<<f.montant<<endl;
     return out;
@@ -52,12 +55,12 @@ istream& operator>>(istream& in, Facture& f)
     in>>f.id_fact;
     cout<<"Saisir date : "<<endl;
     in>>f.date_fact;
-    cout<<"Saisir duree : "<<endl;
-//    in>>f.duree_f;
-    cout<<"Saisir client : "<<endl;
-  //  in>>f.client_f;
     cout<<"Saisir service : "<<endl;
- //   in>>f.service_f;
+    for(int i=0;i<f.tab_f.size();i++)
+    {
+        cout<<"Saisir service : "<<endl;
+        in>>*(f.tab_f[i]);
+    }
     cout<<"-----------------------------"<<endl;
     cout<<"Saisir montant : "<<endl;
     in>>f.montant;
