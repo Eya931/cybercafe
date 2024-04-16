@@ -30,6 +30,6 @@ float Session::calcul_temps_utilisation()
 {
     float t;
     cout<<"Le temps d'utilisation de ce client est :"<<endl;
-    t=date_fin-date_debut;
+    t=[int(date_fin[:2])*60+int(date_fin[3:5])+int(date_fin[6:])/60]-[int(date_debut[:2])*60+int(date_debut[3:5])+int(date_debut[6:])/60];
     return t;
 }

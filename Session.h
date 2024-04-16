@@ -8,10 +8,9 @@ using namespace std;
 
 class Session
 {
-private:
     Client client_sess;
-    int date_debut;
-    int date_fin;
+    string date_debut;
+    string date_fin;
     Ordinateur ordinateur_sess;
 public:
     Session();

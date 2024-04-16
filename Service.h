@@ -8,7 +8,6 @@ using namespace std;
 
 class Service
 {
-private:
     string type;
     Client client_s;
     Tarif tarif_s;
@@ -17,6 +16,5 @@ public:
     ~Service();
     friend ostream& operator<<(ostream&, Service&);
     friend istream& operator>>(istream&, Service&);
-    bool verifier_dispo();
 
 };

@@ -1,9 +1,8 @@
 #pragma once
 #include<string>
 #include<iostream>
-#include "Client.h"
+#include<vector>
 #include "Service.h"
-#include "Session.h"
 #include "Date.h"
 
 using namespace std;
@@ -13,16 +12,18 @@ class Facture
 private:
     static int id_fact;
     Date date_fact;
-    //Session duree_f;
-    //Client client_f;
-    //Service service_f;
-    float montant;
+    vector<Service*>tab_f;
+    float montant ;
 public:
     Facture();
     ~Facture();
+    Facture(const Facture&);
     friend ostream& operator<<(ostream&, Facture&);
     friend istream& operator>>(istream&, Facture&);
     float calcul_montant_tot();
+
+
+
     /*string nom;
     vector <Ligne*> tab;
  public:

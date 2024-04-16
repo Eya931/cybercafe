@@ -50,7 +50,12 @@ Personne Personne::operator=(Personne& p)
     }
     return *this;
 }
-/*void Personne::affichePersonne()
+void Personne::affichePersonne()
 {
 }
-*/
+/*bool Personne::verifier_dispo()
+{
+  for (int i=0;i<session_pers.size();i++)
+    if (session_pers[i].date_fin=0)
+    session_pers[i].Ordinateur_sess.dispo==true;
+}/*

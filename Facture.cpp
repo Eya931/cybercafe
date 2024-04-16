@@ -20,13 +20,27 @@ Facture::Facture()
 Facture::~Facture()
 {
 }
+Facture::Facture(const Facture& f)
+{
+    date_fact=f.date_fact;
+    matricule=b.matricule;
+    Article*e;
+    for(int i=0;i<b.tab.size();i++)
+    {
+        if(typeid(*b.tab[i])==typeid(ArticleEnSolde))
+            e=new ArticleEnSolde(static_cast<const ArticleEnSolde&>(*b.tab[i]));
+        else if(typeid(*b.tab[i])==typeid(Article))
+            e=new Article(static_cast<const Article&>(*b.tab[i]));
+        tab.push_back(e);
+    }
+}
 ostream& operator<<(ostream& out, Facture& f)
 {
     out<<"Num Facture: "<<f.id_fact<<endl;
     out<<"Date : "<<f.date_fact<<endl;
-//    out<<"Duree : "<<f.duree_f<<endl;
-//    out<<"Client : "<<f.client_f<<endl;
-//    out<<"Service : "<<f.service_f<<endl;
+    out<<"Duree : "<<f.duree_f<<endl;
+    out<<"Client : "<<f.client_f<<endl;
+    out<<"Service : "<<f.service_f<<endl;
     out<<"--------------------"<<endl;
     out<<"Montant :     "<<f.montant<<endl;
     return out;
@@ -51,13 +65,13 @@ istream& operator>>(istream& in, Facture& f)
 }
 /*float Facture::calcul_montant_tot()
 {
+    Session s;
+    float j=s.calcul_temps_utilisation();
+    Service serv;
 
 }*/
 
 /*
-
-Facture::
-}
 void Facture::ajouter(Ligne l,int ind)
 {
    Ligne*l1=new Ligne(l);
