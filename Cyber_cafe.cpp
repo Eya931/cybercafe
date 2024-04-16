@@ -13,7 +13,7 @@ Cyber_cafe::Cyber_cafe(const Cyber_cafe& c)
 {
 
 }
-Cyber_cafe& operator= (const Cyber_cafe& c)
+Cyber_cafe& Cyber_cafe::operator= (const Cyber_cafe& c)
 {
 
 }

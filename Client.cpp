@@ -1,53 +1,53 @@
 #include "Client.h"
 
-Client::Client(string n,string p,string add, Service serv, Session sess, int n): Personne(n,p,add) ,service_c(serv) ,session_c(sess), nb_occur(n)
+Client::Client(string n, string p, string add, Service serv, Session sess, int n1) : Personne(n, p, add), service_c(serv), session_c(sess), nb_occur(n1)
 {
 }
 Client::~Client()
 {
 }
-ostream& operator<<(ostream& out, Client& c)
+ostream &operator<<(ostream &out, Client &c)
 {
-    out<<"Nom : "<<c.nom<<endl;
-    out<<"Prenom : "<<c.prenom<<endl;
-    for(int i=0;i<c.session_pers.size();i++)
-        out<<c.session_pers[i];
+    out << "Nom : " << c.nom << endl;
+    out << "Prenom : " << c.prenom << endl;
+    for (int i = 0; i < c.session_pers.size(); i++)
+        out << c.session_pers[i];
     return out;
-
 }
-istream& operator>>(istream& in, Client& c)
+istream &operator>>(istream &in, Client &c)
 {
-    cout<<"Saisir nom : "<<endl;
-    in>>c.nom;
-    cout<<"Saisir prenom : "<<endl;
-    in>>c.prenom;
-    cout<<"Saisir une session : "<<endl;
-    for(int i=0;i<c.session_pers.size();i++)
-        in>>c.session_pers[i];
+    cout << "Saisir nom : " << endl;
+    in >> c.nom;
+    cout << "Saisir prenom : " << endl;
+    in >> c.prenom;
+    cout << "Saisir une session : " << endl;
+    for (int i = 0; i < c.session_pers.size(); i++)
+        in >> *(c.session_pers[i]);
     return in;
-
 }
-Client Client::operator=(const Client& c)
+Client Client::operator=(const Client &c)
 {
-    if (this!=&c)
+    if (this != &c)
     {
-        service_c=c.service_c;
-        session_c=c.session_c;
-        nb_occur=c.nb_occur;
+        service_c = c.service_c;
+        session_c = c.session_c;
+        nb_occur = c.nb_occur;
     }
-  return *this;
+    return *this;
 }
-void affichePersonne()
+void Client::affichePersonne()
 {
-    cout<<"Nom: "<<nom<<endl;
-    cout<<"Prenom: "<<prenom<<endl;
-    cout<<"Adresse mail: "<<adresse_mail<<endl;
-    cout<<"Service: "<<service_c<<endl;
-    cout<<"Session: "<<session_c<<endl;
-    cout<<"Nombre d'occurences: "<<nb_occur<<endl;
+    cout << "Nom: " << nom << endl;
+    cout << "Prenom: " << prenom << endl;
+    cout << "Adresse mail: " << adresse_mail << endl;
+    cout << "Service: " << service_c << endl;
+    cout << "Session: " << session_c << endl;
+    cout << "Nombre d'occurences: " << nb_occur << endl;
 }
 bool Client::verif_membre()
 {
-    if (nb_occur>3) return true;
-    else return false ;
+    if (nb_occur > 3)
+        return true;
+    else
+        return false;
 }

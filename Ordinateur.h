@@ -10,7 +10,7 @@ private:
     string config;
     int nb_occup;
     bool dispo;
-    static int nb_total;
+    int nb_total;
     int num_poste;
 public:
     Ordinateur(string,int, bool, int, int);

@@ -29,6 +29,6 @@ istream& operator>>(istream& in, Ordinateur& o)
     in>>o.num_poste;
     return in;
 }
-/*static void Ordinateur::afficher_nb_total()
+void Ordinateur::afficher_nb_total()
 {
-}*/
+}

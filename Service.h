@@ -16,5 +16,6 @@ public:
     ~Service();
     friend ostream& operator<<(ostream&, Service&);
     friend istream& operator>>(istream&, Service&);
+    bool verifier_dispo();
 
 };

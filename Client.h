@@ -21,4 +21,4 @@ public:
     Client operator=(const Client&);
     void affichePersonne();
     bool verif_membre();
-}
+};
